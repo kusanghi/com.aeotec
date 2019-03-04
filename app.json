@@ -7906,6 +7906,591 @@
           ]
         }
       ]
-    }
+    },
+	{
+      "id": "ZWA005",
+      "name": {
+        "en": "TriSensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery",
+		"alarm_motion",
+        "measure_luminance",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/ZWA005/assets/images/large.jpg",
+        "small": "/drivers/ZWA005/assets/images/small.jpg"
+      },
+      "zwave": {
+        "manufacturerId": 881,
+        "productTypeId": [
+          2
+        ],
+        "productId": [
+          5
+        ],
+        "learnmode": {
+          "image": "/drivers/ZWA005/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the action button on the Multisensor 3-in-1"
+          }
+        },
+        "associationGroups": [
+          1,
+		  2,
+          3
+        ]
+      },
+      "settings": [
+		{
+          "id": "1",
+          "type": "number",
+          "label": {
+            "en": "Motion re-trigger time"
+          },
+          "hint": {
+            "en": "This configures the delay time before you can retrigger the PIR sensor, if the re-trigger happens between retrigger time and clear time, this will reset the clear time clock. If this is disabled, you must wait until motion clears to trigger motion again."
+          },
+          "zwave": {
+            "index": 1,
+            "size": 2
+          },
+          "value": 30,
+          "attr": {
+            "min": 0,
+            "max": 32767
+          }
+        },
+		{
+          "id": "2",
+          "type": "number",
+          "label": {
+            "en": "Motion clear time"
+          },
+          "hint": {
+            "en": "This configures the clear time when your motion sensor times out and sends a no motion status."
+          },
+          "zwave": {
+            "index": 2,
+            "size": 2
+          },
+          "value": 240,
+          "attr": {
+            "min": 1,
+            "max": 32767
+          }
+        },
+		{
+          "id": "3",
+          "type": "number",
+          "label": {
+            "en": "Motion sensitivity"
+          },
+          "hint": {
+            "en": "This setting configures the sensitivity of Motion Sensor where 0 is disabled, 1 is lowest sensitivity, and 11 is maximum sensitivity."
+          },
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "value": 11,
+          "attr": {
+            "min": 0,
+            "max": 11
+          }
+        },
+		{
+          "id": "4",
+          "type": "dropdown",
+          "label": {
+            "en": "Enable/Disable Binary Sensor Report"
+          },
+          "hint": {
+            "en": "This setting is used to enable Binary Sensor Reports which is used for gateways that use the older style of motion reports. If you do not see status changes over your motion sensor, you must enable this setting."
+          },
+          "zwave": {
+            "index": 4,
+            "size": 1
+          },
+           "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disables Binary Sensor Report"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Enables Binary Sensor Report"
+              }
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "type": "dropdown",
+          "label": {
+            "en": "Enable or Disable LED over TriSensor"
+          },
+          "hint": {
+            "en": "This completely disables all LED reaction regardless of Parameter 10 - 15 settings."
+          },
+          "zwave": {
+            "index": 11,
+            "size": 1
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Yelllow"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Pink"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Cyan"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Purple"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Orange"
+              }
+            }			
+          ]
+        },
+        {
+          "id": "12",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature report LED."
+          },
+          "hint": {
+            "en": "This setting changes the color of the LED when your TriSensor sends a temperature report."
+          },
+          "zwave": {
+            "index": 12,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Yelllow"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Pink"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Cyan"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Purple"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Orange"
+              }
+            }			
+          ]
+        },
+        {
+          "id": "13",
+          "type": "dropdown",
+          "label": {
+            "en": "Light report LED."
+          },
+          "hint": {
+            "en": "This setting changes the color of the LED when your TriSensor sends a light report."
+          },
+          "zwave": {
+            "index": 13,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Yelllow"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Pink"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Cyan"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Purple"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Orange"
+              }
+            }			
+          ]
+        },
+        {
+          "id": "14",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery report LED"
+          },
+          "hint": {
+            "en": "It is possible to change the color of what the LED blinks when your TriSensor sends a battery report."
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Yelllow"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Pink"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Cyan"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Purple"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Orange"
+              }
+            }			
+          ]
+        },
+        {
+          "id": "15",
+          "type": "dropdown",
+          "label": {
+            "en": "Wakeup report LED."
+          },
+          "hint": {
+            "en": "This setting changes the color of the LED when your TriSensor sends a wakeup report."
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disable"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Green"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Yelllow"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Pink"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Cyan"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Purple"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Orange"
+              }
+            }		
+          ]
+        },		
+		{
+          "id": "20",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Scale Setting"
+          },
+          "hint": {
+            "en": "You can control what scale is reported from your temperature sensor."
+          },
+          "zwave": {
+            "index": 20,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Celcius"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Fahrenheit"
+              }
+            }
+          ]
+        },
+		{
+          "id": "21",
+          "type": "number",
+          "label": {
+            "en": "Temperature Threshold reporting"
+          },
+          "hint": {
+            "en": "Sets threshold for inducing automatic report using a scale of 0.1 * value = temperature threshold"
+          },
+          "zwave": {
+            "index": 21,
+            "size": 2
+          },
+          "value": 10,
+          "attr": {
+            "min": 0,
+            "max": 250
+          }
+        },
+		{
+          "id": "22",
+          "type": "number",
+          "label": {
+            "en": "Light Threshold Report"
+          },
+          "hint": {
+            "en": "Change threshold value for change in light sensor to induce an automatic report for temperature sensor."
+          },
+          "zwave": {
+            "index": 22,
+            "size": 2
+          },
+          "value": 100,
+          "attr": {
+            "min": 0,
+            "max": 32767
+          }
+        },
+		{
+          "id": "23",
+          "type": "number",
+          "label": {
+            "en": "Temperature automatic report based on time"
+          },
+          "hint": {
+            "en": "This parameter is configured the time interval for temperature sensor report. This value is larger, the battery life is longer."
+          },
+          "zwave": {
+            "index": 23,
+            "size": 2
+          },
+          "value": 3600,
+          "attr": {
+            "min": 1,
+            "max": 32767
+          }
+        },
+		{
+          "id": "24",
+          "type": "number",
+          "label": {
+            "en": "Light automatic report based on time."
+          },
+          "hint": {
+            "en": "This parameter is configured the time interval for Light sensor report. This value is larger, the battery life is longer."
+          },
+          "zwave": {
+            "index": 24,
+            "size": 2
+          },
+          "value": 3600,
+          "attr": {
+            "min": 1,
+            "max": 32767
+          }
+        }
+      ]
+    }	
   ]
 }
